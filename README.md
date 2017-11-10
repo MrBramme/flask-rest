@@ -27,3 +27,11 @@ curl http://127.0.0.1:5000/list/0
 
 Post:
 curl http://127.0.0.1:5000/list -d '{"name":"newName","label":"newLabel"}' -X POST -H "Content-Type: application/json"
+
+## Different data
+When using different data, be sure to update the parser in flask-api.py.
+```
+parser = reqparse.RequestParser()
+parser.add_argument('name')
+parser.add_argument('label')
+```
